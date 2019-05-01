@@ -34,7 +34,7 @@ node {
     download = true
 }
 
-yarn_run {
+yarn_run_start {
     inputs.files fileTree("public")
     inputs.files fileTree("src")
     inputs.file 'package.json'
@@ -42,10 +42,10 @@ yarn_run {
     outputs.dir 'build'
 }
 
-assemble.dependsOn yarn_run
+assemble.dependsOn packageNpmApp
 
 task packageNpmApp(type: Zip) {
-    dependsOn yarn_run
+    dependsOn yarn_run_start
     baseName 'npm-app'
     extension 'jar'
     destinationDir = file("${projectDir}/build_packageNpmApp")
