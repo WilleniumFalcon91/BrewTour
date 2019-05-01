@@ -1,0 +1,3 @@
+INDEX VERSION 1.131+/Users/william_elliott/Desktop/BrewTour/.metadata/.plugins/org.eclipse.jdt.core
+2259852556.index
+1398961715.index
