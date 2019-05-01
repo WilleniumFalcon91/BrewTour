@@ -42,10 +42,10 @@ yarn_run_start {
     outputs.dir 'build'
 }
 
-assemble.dependsOn packageNpmApp
+assemble.dependsOn yarn_run_start
 
 task packageNpmApp(type: Zip) {
-    dependsOn yarn_run_start
+    dependsOn yarn_run
     baseName 'npm-app'
     extension 'jar'
     destinationDir = file("${projectDir}/build_packageNpmApp")
